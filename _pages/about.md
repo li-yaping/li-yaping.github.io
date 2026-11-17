@@ -1,6 +1,7 @@
 ---
+layout: home
 permalink: /
-title: "Welcome to Yaping Li(李雅萍)'s Homepage!"
+title: "Yaping Li (李雅萍)"
 author_profile: true
 redirect_from: 
   - /about/
@@ -8,10 +9,11 @@ redirect_from:
 ---
 
 
-I'm a first-year Ph.D. Student at the [MMLab](https://mmlab.ie.cuhk.edu.hk/), [The Chinese University of Hong Kong](https://www.cuhk.edu.hk/english/index.html), supervised by Prof. [Dahua Lin](http://dahua.site/). Prior to this, I received my B.Eng. degree from [Sun Yat-sen University](https://www.sysu.edu.cn/sysuen/) in 2025. My research interests primarily lie in **Embodied AI** and **Robotic Manipulation**.
+I'm a second-year Ph.D. Student at the [MMLab](https://mmlab.ie.cuhk.edu.hk/), [The Chinese University of Hong Kong](https://www.cuhk.edu.hk/english/index.html), supervised by Prof. [Dahua Lin](http://dahua.site/). Prior to this, I received my B.Eng. degree from [Sun Yat-sen University](https://www.sysu.edu.cn/sysuen/) in 2025. My research interests primarily lie in **Embodied AI** and **Robotic Manipulation**.
 
 ## Publications
-* **Papers or submissions will be updated soon.**
+
+{% include paper-list.html %}
 
 ## Education
 * **The Chinese University of Hong Kong (CUHK)**, 2025 – Present

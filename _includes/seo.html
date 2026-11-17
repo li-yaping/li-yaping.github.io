@@ -6,7 +6,10 @@
 {% endif %}
 {% assign seo_url = seo_url | default: site.github.url %}
 
-{% if page.title %}
+{% if page.url == "/" and page.title %}
+  {% comment %} The home page is titled with the name alone, without the site title. {% endcomment %}
+  {% assign seo_title = page.title %}
+{% elsif page.title %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
 {% endif %}
 

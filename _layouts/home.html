@@ -1,0 +1,152 @@
+---
+layout: compress
+---
+{%- comment -%}
+  Layout of the home page (_pages/about.md). It is self-contained: it loads its own
+  stylesheet (assets/css/home.css) and script (assets/js/home.js) instead of the theme's.
+
+  The page content is split at its "##" headings. Whatever comes before the first heading
+  is the intro text shown next to the portrait; each heading starts a section and gets a
+  link in the header. Name, tagline, portrait and profile links come from "author" in
+  _config.yml.
+{%- endcomment -%}
+{%- assign author = site.author -%}
+{%- assign blocks = content | split: '<h2 id="' -%}
+{%- assign title = page.title | default: author.name -%}
+{%- assign name_parts = title | split: " (" -%}
+{%- assign name = name_parts | first -%}
+{%- if author.avatar contains "://" -%}
+  {%- assign avatar = author.avatar -%}
+{%- elsif author.avatar -%}
+  {%- assign avatar = author.avatar | prepend: "/images/" | relative_url -%}
+{%- endif -%}
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    {% include seo.html %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f1216" media="(prefers-color-scheme: dark)">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon-180x180.png' | relative_url }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/images/favicon.svg' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ '/images/favicon-32x32.png' | relative_url }}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ '/images/favicon-192x192.png' | relative_url }}" sizes="192x192">
+    <link rel="manifest" href="{{ '/images/manifest.json' | relative_url }}">
+
+    {%- comment -%} Set the color theme before the first paint. No line comments here: the HTML is compressed onto one line. {%- endcomment %}
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var stored = null;
+        root.classList.remove("no-js");
+        try { stored = localStorage.getItem("theme"); } catch (e) {}
+        if (stored === "dark" || (stored !== "light" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          root.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+
+    <link rel="preload" href="{{ '/assets/fonts/inter/inter-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="container site-header__inner">
+        <a class="site-header__brand" href="#top">{{ site.title }}</a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Sections">
+          {%- for block in blocks offset: 1 -%}
+            {%- assign section_id = block | split: '"' | first -%}
+            {%- assign section_title = block | split: '</h2>' | first | split: '>' | last -%}
+            <a class="site-nav__link" href="#{{ section_id }}">{{ section_title }}</a>
+          {%- endfor -%}
+        </nav>
+
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Switch between light and dark theme">
+          {%- include home/icon.html name="sun" class="theme-icon theme-icon--light" -%}
+          {%- include home/icon.html name="moon" class="theme-icon theme-icon--dark" -%}
+        </button>
+        <button class="icon-button site-nav__toggle" type="button" data-nav-toggle aria-controls="site-nav" aria-expanded="false" aria-label="Menu">
+          {%- include home/icon.html name="menu" class="site-nav__toggle-open" -%}
+          {%- include home/icon.html name="close" class="site-nav__toggle-close" -%}
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <section class="hero">
+        <div class="hero__body">
+          <h1 class="hero__name">
+            {{- name -}}
+            {%- if name_parts[1] %} <span class="hero__name-alt">({{ name_parts[1] }}</span>{% endif -%}
+          </h1>
+          {%- if author.bio %}
+          <p class="hero__role">{{ author.bio }}</p>
+          {%- endif %}
+
+          <div class="hero__intro prose">
+            {{ blocks | first }}
+          </div>
+
+          <ul class="hero__links">
+            {%- if author.email %}
+            <li><a class="chip" href="mailto:{{ author.email }}">{% include home/icon.html name="mail" %}Email</a></li>
+            {%- endif %}
+            {%- if author.googlescholar %}
+            <li><a class="chip" href="{{ author.googlescholar | escape }}">{% include home/icon.html name="googlescholar" %}Google Scholar</a></li>
+            {%- endif %}
+            {%- if author.github %}
+            <li><a class="chip" href="https://github.com/{{ author.github }}">{% include home/icon.html name="github" %}GitHub</a></li>
+            {%- endif %}
+            {%- if author.orcid %}
+            <li><a class="chip" href="{{ author.orcid | escape }}">{% include home/icon.html name="orcid" %}ORCID</a></li>
+            {%- endif %}
+            {%- if author.twitter %}
+            <li><a class="chip" href="https://twitter.com/{{ author.twitter }}">{% include home/icon.html name="x" %}X</a></li>
+            {%- endif %}
+            {%- if author.linkedin %}
+            <li><a class="chip" href="https://www.linkedin.com/in/{{ author.linkedin }}">{% include home/icon.html name="link" %}LinkedIn</a></li>
+            {%- endif %}
+            {%- if author.uri %}
+            <li><a class="chip" href="{{ author.uri | escape }}">{% include home/icon.html name="link" %}Website</a></li>
+            {%- endif %}
+          </ul>
+        </div>
+
+        {%- if avatar %}
+        <div class="hero__photo">
+          <img src="{{ avatar }}" alt="Portrait of {{ name }}" width="432" height="540" fetchpriority="high">
+        </div>
+        {%- endif %}
+      </section>
+
+      {%- for block in blocks offset: 1 -%}
+        {%- assign section_id = block | split: '"' | first %}
+      <section class="section prose" data-section="{{ section_id }}">
+        <h2 id="{{ block }}
+      </section>
+      {%- endfor %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>&copy; {{ site.time | date: "%Y" }} {{ site.name | default: site.title }}</p>
+        <p>
+          Last updated {{ site.time | date: "%Y-%m-%d" }} &middot;
+          Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp;
+          <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>,
+          a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="{{ '/assets/js/home.js' | relative_url }}" defer></script>
+    {% include analytics.html %}
+  </body>
+</html>

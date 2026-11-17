@@ -1,0 +1,51 @@
+# Papers shown in the "Publications" section of the home page (_pages/about.md).
+# Rendered by _includes/paper-list.html and styled in assets/css/home.css.
+#
+# Papers appear on the page in the order they are listed here (newest first),
+# so a new paper goes at the top.
+#
+# Fields:
+#   title     paper title
+#   authors   full author list. "*" marks equal contribution and "†" marks
+#             corresponding authors; "Yaping Li" is set in bold automatically.
+#   venue     short label shown as a badge, e.g. "CVPR 2026" or "arXiv 2026"
+#   preprint  set to true while the paper is only on arXiv (outlined badge)
+#   image     teaser image, relative to /images/
+#   page      where the title and the teaser link to, usually the project page
+#   links     "label: URL" pairs, shown in this order
+
+- title: "Skel-WAM: A Hand-Skeleton-Conditioned World Action Model for Human-to-Robot Manipulation Transfer"
+  authors: "Zetao Cai, Yaping Li, Yiqun Wang, Xinyu Zhan, Yuyin Yang, Haoxiang Ma, Kailin Li, Tao Lu, Jiangmiao Pang, Linning Xu†, Dahua Lin†"
+  venue: "arXiv 2026"
+  preprint: true
+  image: "papers/skel-wam.webp"
+  page: "https://healorcai.github.io/Skel-WAM/"
+  links:
+    PDF: "https://arxiv.org/pdf/2609.21514"
+    arXiv: "https://arxiv.org/abs/2609.21514"
+    Project Page: "https://healorcai.github.io/Skel-WAM/"
+    Code: "https://github.com/HealorCai/Skel-WAM"
+    Video: "https://www.youtube.com/watch?v=svhF2z4pJsM"
+
+- title: "KAI: A Kinematic-Aware Interface for Data-Efficient Articulated Object Manipulation"
+  authors: "Yaping Li, Zhaxizhuoma, Qiaojun Yu†, Jia Zeng†, Dahua Lin†, Jiangmiao Pang†"
+  venue: "arXiv 2026"
+  preprint: true
+  image: "papers/kai.webp"
+  page: "https://li-yaping.github.io/KAI/"
+  links:
+    PDF: "https://arxiv.org/pdf/2607.24493"
+    arXiv: "https://arxiv.org/abs/2607.24493"
+    Project Page: "https://li-yaping.github.io/KAI/"
+
+- title: "InternData-A1: Pioneering High-Fidelity Synthetic Data for Pre-training Generalist Policy"
+  authors: "Yang Tian*, Yuyin Yang*, Yiman Xie*, Zetao Cai*, Xu Shi*, Ning Gao, Hangxu Liu, Xuekun Jiang, Zherui Qiu, Feng Yuan, Yaping Li, Ping Wang, Junhao Cai, Jia Zeng†, Hao Dong†, Jiangmiao Pang†"
+  venue: "CVPR 2026"
+  image: "papers/interndata-a1.webp"
+  page: "https://internrobotics.github.io/interndata-a1.github.io/"
+  links:
+    PDF: "https://openaccess.thecvf.com/content/CVPR2026/papers/Tian_InternData-A1_Pioneering_High-Fidelity_Synthetic_Data_for_Pre-training_Generalist_Policy_CVPR_2026_paper.pdf"
+    arXiv: "https://arxiv.org/abs/2511.16651"
+    Project Page: "https://internrobotics.github.io/interndata-a1.github.io/"
+    Dataset: "https://huggingface.co/datasets/InternRobotics/InternData-A1"
+    Code: "https://github.com/InternRobotics/InternDataEngine"

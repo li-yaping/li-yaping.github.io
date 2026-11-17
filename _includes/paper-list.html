@@ -1,0 +1,24 @@
+{%- comment -%}
+  Renders the papers listed in _data/papers.yml; the fields are documented there.
+{%- endcomment -%}
+<div class="paper-list">
+  <p class="paper-list__note"><sup>*</sup> Equal contribution, <sup>†</sup> corresponding author.</p>
+  {%- for paper in site.data.papers %}
+  {%- assign authors = paper.authors | escape | replace: "*", "<sup>*</sup>" | replace: "†", "<sup>†</sup>" | replace: "Yaping Li", "<strong>Yaping Li</strong>" %}
+  <div class="paper">
+    <a class="paper__teaser" href="{{ paper.page | escape }}" tabindex="-1" aria-hidden="true">
+      <img src="{{ paper.image | prepend: '/images/' | relative_url }}" alt="" loading="lazy">
+    </a>
+    <div class="paper__body">
+      <a class="paper__title" href="{{ paper.page | escape }}">{{ paper.title | escape }}</a>
+      <div class="paper__authors">{{ authors }}</div>
+      <div class="paper__meta">
+        <span class="paper__venue{% if paper.preprint %} paper__venue--preprint{% endif %}">{{ paper.venue | escape }}</span>
+        {%- for link in paper.links %}
+        <a class="paper__link" href="{{ link[1] | escape }}">{{ link[0] | escape }}</a>
+        {%- endfor %}
+      </div>
+    </div>
+  </div>
+  {%- endfor %}
+</div>
