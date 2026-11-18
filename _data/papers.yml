@@ -23,6 +23,7 @@
   page: "https://li-yaping.github.io/SHAPE/"
   links:
     Project Page: "https://li-yaping.github.io/SHAPE/"
+    Video: "https://li-yaping.github.io/SHAPE/#video"
 
 - title: "Skel-WAM: A Hand-Skeleton-Conditioned World Action Model for Human-to-Robot Manipulation Transfer"
   authors: "Zetao Cai, Yaping Li, Yiqun Wang, Xinyu Zhan, Yuyin Yang, Haoxiang Ma, Kailin Li, Tao Lu, Jiangmiao Pang, Linning Xu†, Dahua Lin†"
