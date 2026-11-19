@@ -17,13 +17,16 @@
 
 - title: "SHAPE: Discrete Supervision and Parallel Continuous Streams for Learning Dexterous Manipulation from Egocentric Human Data"
   authors: "Yaping Li, Zhihong Liu, Jiacheng Li, Yi Yang, Wenchao Yue, Mingzhe Ye, Xiangcheng Liu, Yiyang Chen, Haotian He, Qi Zhang, Haonan Wang, Dahua Lin, Zhijie Deng"
-  venue: "2026"
+  venue: "arXiv 2026"
   preprint: true
   image: "papers/shape.webp"
   page: "https://li-yaping.github.io/SHAPE/"
   links:
+    PDF: "https://arxiv.org/pdf/2611.24585"
+    arXiv: "https://arxiv.org/abs/2611.24585"
     Project Page: "https://li-yaping.github.io/SHAPE/"
     Video: "https://li-yaping.github.io/SHAPE/#video"
+    BibTeX: "https://li-yaping.github.io/SHAPE/#cite"
 
 - title: "Skel-WAM: A Hand-Skeleton-Conditioned World Action Model for Human-to-Robot Manipulation Transfer"
   authors: "Zetao Cai, Yaping Li, Yiqun Wang, Xinyu Zhan, Yuyin Yang, Haoxiang Ma, Kailin Li, Tao Lu, Jiangmiao Pang, Linning Xu†, Dahua Lin†"
