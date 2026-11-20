@@ -15,6 +15,17 @@
 #   page      where the title and the teaser link to, usually the project page
 #   links     "label: URL" pairs, shown in this order
 
+- title: "ManipScope: A Diagnostic Benchmark for Instruction Following and Generalization in Robotic Manipulation"
+  authors: "Jiacheng Li, Yaping Li, Congsheng Xu, Qingchen Liu, Haonan Wang, Zhijie Deng†, Jiahu Qin†"
+  venue: "Preprint 2026"
+  preprint: true
+  image: "papers/manipscope.webp"
+  page: "https://embodied-ai-research.github.io/ManipScope_webpage/"
+  links:
+    Project Page: "https://embodied-ai-research.github.io/ManipScope_webpage/"
+    Code: "https://github.com/USTC-AIR-Lab/ManiScope"
+    BibTeX: "https://embodied-ai-research.github.io/ManipScope_webpage/#cite"
+
 - title: "SHAPE: Discrete Supervision and Parallel Continuous Streams for Learning Dexterous Manipulation from Egocentric Human Data"
   authors: "Yaping Li, Zhihong Liu, Jiacheng Li, Yi Yang, Wenchao Yue, Mingzhe Ye, Xiangcheng Liu, Yiyang Chen, Haotian He, Qi Zhang, Haonan Wang, Dahua Lin, Zhijie Deng"
   venue: "arXiv 2026"
